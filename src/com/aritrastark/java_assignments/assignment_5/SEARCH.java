@@ -31,14 +31,19 @@ public class SEARCH {
     }
 
     public static void indexed(ArrayList<String> arr){
-        TreeMap<String,Integer> tm = new TreeMap<String,Integer>();
-        int i=1;
+        TreeMap<String,ArrayList<Integer>> tm = new TreeMap<String,ArrayList<Integer>>();
         for(String a:arr){
             String[] line = a.split("\\s");
             for(String b:line){
-                tm.put(b,i);
+                if(tm.containsKey(b)){
+                    tm.get(b).add(arr.indexOf(a)+1);
+                }
+                else{
+                    ArrayList<Integer> t = new ArrayList<Integer>();
+                    t.add(arr.indexOf(a)+1);
+                    tm.put(b,t);
+                }
             }
-            i++;
         }
         System.out.println(tm);
     }

@@ -12,7 +12,7 @@ public class FILE {
         Scanner fio = new Scanner(file);
         while(fio.hasNext()) {
             String temp = fio.nextLine();
-            arr.add(temp);
+            arr.add(temp.toLowerCase());
         }
         SEARCH.indexed(arr);
     }
