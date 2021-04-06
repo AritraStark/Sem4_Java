@@ -1,7 +1,9 @@
-package com.aritrastark.java_assignments.assignment_6;
+package com.aritrastark.java_assignments.assignment_5;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class SEARCH {
     public static void findPerson(ArrayList<String> arr){
@@ -26,5 +28,18 @@ public class SEARCH {
         System.out.println("=== List of people ===");
         for(int i=0;i<arr.size();i++)
             System.out.println(arr.get(i));
+    }
+
+    public static void indexed(ArrayList<String> arr){
+        TreeMap<String,Integer> tm = new TreeMap<String,Integer>();
+        int i=1;
+        for(String a:arr){
+            String[] line = a.split("\\s");
+            for(String b:line){
+                tm.put(b,i);
+            }
+            i++;
+        }
+        System.out.println(tm);
     }
 }

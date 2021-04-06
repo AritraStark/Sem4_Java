@@ -5,11 +5,16 @@
 package com.aritrastark;
 
 import com.aritrastark.java_assignments.assignment_1.DEPT_INTER;
+import com.aritrastark.java_assignments.assignment_2.SEO;
+import com.aritrastark.java_assignments.assignment_2.SK;
+import com.aritrastark.java_assignments.assignment_2.USER;
 import com.aritrastark.java_assignments.assignment_3.PARENTHESES;
 import com.aritrastark.java_assignments.assignment_4.QUOTES;
-import static com.aritrastark.java_assignments.assignment_6.FILE.readTextFromFile;
-import static com.aritrastark.java_assignments.assignment_6.SEARCH.findPerson;
-import static com.aritrastark.java_assignments.assignment_6.SEARCH.printAll;
+import com.aritrastark.java_assignments.assignment_6.HOSPITAL;
+
+import static com.aritrastark.java_assignments.assignment_5.FILE.readTextFromFile;
+import static com.aritrastark.java_assignments.assignment_5.SEARCH.findPerson;
+import static com.aritrastark.java_assignments.assignment_5.SEARCH.printAll;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -81,6 +86,33 @@ public class Main {
         }
     }
 
+    public static void ex_as_2(){
+        Scanner io = new Scanner(System.in);
+        for (;;){
+            System.out.print("Enter :\n1. For entering as shopkeeper:\n2. For entering as stock entry operator\n3. For exit:\n");
+            int c = io.nextInt();
+            switch (c){
+                case 1:{
+                    SK a = new SK();
+                    a.display();
+                    break;
+                }
+                case 2:{
+                    SEO a = new SEO();
+                    a.display();
+                }
+                case 3:{
+                    System.out.println("Exiting...");
+                    return;
+                }
+                default:{
+                    System.out.println("Wrong Input");
+                    break;
+                }
+            }
+        }
+    }
+
     public static void ex_as_3(){
         //For executing the program of ASSIGNMENT 3
         PARENTHESES a = new PARENTHESES();
@@ -133,29 +165,59 @@ public class Main {
         }
     }
 
-    public static void ex_as_6() throws FileNotFoundException {
+    public static void ex_as_5() throws FileNotFoundException {
         Scanner inout = new Scanner(System.in);
         ArrayList<String> arr = new ArrayList<String>();
         readTextFromFile(arr);
+//        for(;;){
+//            System.out.println("=== Menu ===\n1. Find a person\n2. Print all people\n0. Exit");
+//            int c = inout.nextInt();
+//            switch(c){
+//                case 0:{
+//                    System.out.println("Bye!");
+//                    return;
+//                }
+//                case 1:{
+//                    findPerson(arr);
+//                    break;
+//                }
+//                case 2:{
+//                    printAll(arr);
+//                    break;
+//                }
+//                default:{
+//                    System.out.println("Incorrect option! Try again.");
+//                    break;
+//                }
+//            }
+//        }
+    }
+
+    public static void ex_as_6(){
+        Scanner inout = new Scanner(System.in);
+        HOSPITAL a = new HOSPITAL();
         for(;;){
-            System.out.println("=== Menu ===\n1. Find a person\n2. Print all people\n0. Exit");
+            System.out.println("Enter: \n1. To enter as Doctor\n2. To enter as Patient\n3. Show Doctors available\n4. Show Patients available\n5. Exit");
             int c = inout.nextInt();
             switch(c){
-                case 0:{
-                    System.out.println("Bye!");
+                case 1->{
+                    a.docEntry();
+                }
+                case 2->{
+                    a.patientEntry();
+                }
+                case 3->{
+                    a.showdocs();
+                }
+                case 4->{
+                    a.showpats();
+                }
+                case 5->{
+                    System.out.println("Exiting...");
                     return;
                 }
-                case 1:{
-                    findPerson(arr);
-                    break;
-                }
-                case 2:{
-                    printAll(arr);
-                    break;
-                }
-                default:{
+                default->{
                     System.out.println("Incorrect option! Try again.");
-                    break;
                 }
             }
         }
@@ -163,7 +225,7 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
         Scanner io = new Scanner(System.in);
-        System.out.print("Enter :\n1. Assignment 1:\n2. Assignment 2:\n3. Assignment 3:\n4. Assignment 4:\n");
+        System.out.print("Enter :\n1. Assignment 1:\n2. Assignment 2:\n3. Assignment 3:\n4. Assignment 4:\n5. Assignment 5:\n6. Assignment 6:\n");
         int c = io.nextInt();
         switch (c) {
             case 1 -> {
@@ -172,7 +234,7 @@ public class Main {
             }
             case 2 -> {
                 System.out.println("Assignment 2:");
-                //ex_as_2();
+                ex_as_2();
             }
             case 3 -> {
                 System.out.println("Assignment 3:");
@@ -181,6 +243,14 @@ public class Main {
             case 4 -> {
                 System.out.println("Assignment 4:");
                 ex_as_4();
+            }
+            case 5 -> {
+                System.out.println("Assignment 5:");
+                ex_as_5();
+            }
+            case 6 -> {
+                System.out.println("Assignment 6:");
+                ex_as_6();
             }
             default -> System.out.println("Wrong Input");
         }
