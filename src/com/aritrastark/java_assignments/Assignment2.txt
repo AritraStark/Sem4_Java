@@ -1,0 +1,38 @@
+Object Oriented Programming Lab (JAVA)
+BCSE 2nd year 2nd Semester
+
+Assignment – 2
+
+1. Design a BankAcct class with account number, balance and interest rate as attribute.
+Interest rate is same for all account. Support must be there to initialize, change and
+display the interest rate. Also supports are to be there to return balance and calculate
+interest.
+
+2. Design a Metric class that supports Kilometre to Mile conversion with distance in
+Kilometre as argument and Mile to Kilometre conversion with distance in mile as
+argument. Assume, one Mile equals 1.5 Kilometre.
+
+3. Take a String input that contains multiple words. Do the following: i) number of times ‘a’
+appears ii) number of times “and” appears iii) whether it starts with “The” or not iv) put
+the String into an array of characters v) display the tokens in the String (tokens are the
+substrings separated by space or @ or .)
+
+4. Consider a wrapper class for a numeric basic type. Check the support for the following:
+conversion from i) basic type to object ii) object to basic type iii) basic type to String iv)
+String (holding numeric data) to numeric object v) object to String.
+
+5. Each customer of a bank has customer id, name, and current loan amount and phone
+number. One can change the attributes like name, phone number. A customer may ask for
+loan of certain amount. It is granted provided the sum of current loan amount and asked
+amount does not exceed credit limit (fixed amount for all customer). A customer may be
+a privileged amount. For such customers credit limit is higher. Once a loan is sanctioned
+necessary updates should be made. Any type of customer should be able to find his credit
+limit, current loan amount and amount of loan he can seek. Design and implement the
+classes.
+
+6. For every person in an institute details like name, address (consists of premises number,
+street, city, pin and state), phone number, e-mail id are maintained. A person is either a
+student or a faculty. For student roll number and course of study are also be maintained.
+For faculty employee id, department and specialisation are to be stored. One should be
+able to view the object details and set the attributes. For address, one may change it
+partially depending on the choice. Design and implement the classes.

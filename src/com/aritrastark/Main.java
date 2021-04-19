@@ -4,6 +4,13 @@
 
 package com.aritrastark;
 
+import com.aritrastark.java_assignments.assignment2_1.BANKACC;
+import com.aritrastark.java_assignments.assignment2_2.METRIC;
+import com.aritrastark.java_assignments.assignment2_3.WORD;
+import com.aritrastark.java_assignments.assignment2_4.WRAPPER;
+import com.aritrastark.java_assignments.assignment2_5.CUST;
+import com.aritrastark.java_assignments.assignment2_6.FAC;
+import com.aritrastark.java_assignments.assignment2_6.STU;
 import com.aritrastark.java_assignments.assignment_1.DEPT_INTER;
 import com.aritrastark.java_assignments.assignment_2.SEO;
 import com.aritrastark.java_assignments.assignment_2.SK;
@@ -11,6 +18,7 @@ import com.aritrastark.java_assignments.assignment_2.USER;
 import com.aritrastark.java_assignments.assignment_3.PARENTHESES;
 import com.aritrastark.java_assignments.assignment_4.QUOTES;
 import com.aritrastark.java_assignments.assignment_6.HOSPITAL;
+import com.aritrastark.java_assignments.assignment_6.PERSON;
 
 import static com.aritrastark.java_assignments.assignment_5.FILE.readTextFromFile;
 import static com.aritrastark.java_assignments.assignment_5.SEARCH.findPerson;
@@ -223,34 +231,335 @@ public class Main {
         }
     }
 
+    public static void ex_as_7(){
+        Scanner inout = new Scanner(System.in);
+        ArrayList<BANKACC> arr = new ArrayList<BANKACC>();
+        for(;;){
+            System.out.println("Enter:\n1. To create account\n2. To update Interest Rate\n3. To get Interest Rate\n4. To get interest amount\n5.To get Balance\n6. To exit");
+            int c = inout.nextInt();
+            switch(c){
+                case 1->{
+                    BANKACC temp = new BANKACC();
+                    temp.init();
+                    arr.add(temp);
+                }
+                case 2->{
+                    System.out.println("Enter Account Number:");
+                    int a = inout.nextInt();
+                    for(BANKACC t:arr){
+                        if(t.getAccNo()==a){
+                            System.out.println("Enter new Interest Rate:");
+                            double ir = inout.nextDouble();
+                            t.setInterestRate(ir);
+                            return;
+                        }
+                    }
+                    System.out.println("Id not found");
+                }
+                case 3->{
+                    System.out.println("Enter Account Number:");
+                    int a = inout.nextInt();
+                    for(BANKACC t:arr){
+                        if(t.getAccNo()==a){
+                            System.out.println("Interest Rate: "+t.getInterestRate());
+                            return;
+                        }
+                    }
+                    System.out.println("Id not found");
+                }
+                case 4->{
+                    System.out.println("Enter Account Number:");
+                    int a = inout.nextInt();
+                    for(BANKACC t:arr){
+                        if(t.getAccNo()==a){
+                            System.out.println("Interest Amount: "+ t.calcInt());
+                            return;
+                        }
+                    }
+                    System.out.println("Id not found");
+                }
+                case 5->{
+                    System.out.println("Enter Account Number:");
+                    int a = inout.nextInt();
+                    for(BANKACC t:arr){
+                        if(t.getAccNo()==a){
+                            System.out.println("Balance Amount: "+ t.getBalance());
+                            return;
+                        }
+                    }
+                    System.out.println("Id not found");
+                }
+                case 6->{
+                    System.out.println("Exiting...");
+                    return;
+                }
+                default->{
+                    System.out.println("Incorrect option! Try again.");
+                }
+            }
+        }
+    }
+
+    public static void ex_as_8(){
+        METRIC a = new METRIC();
+        Scanner inout = new Scanner(System.in);
+        for(;;){
+            System.out.println("Enter:\n1. To convert Kilometer to Miles\n2. To convert Miles to Kilometer\n3. To Exit");
+            int c = inout.nextInt();
+            switch (c){
+                case 1->{
+                    System.out.println("Enter Kilometer Value:");
+                    double km = inout.nextDouble();
+                    a.setKm(km);
+                    a.convertToMile();
+                    System.out.println("Converted Miles value is: "+ a.getMi());
+                }
+                case 2->{
+                    System.out.println("Enter Miles Value:");
+                    double mi = inout.nextDouble();
+                    a.setMi(mi);
+                    a.convertToKm();
+                    System.out.println("Converted Kilometer value is: "+ a.getKm());
+                }
+                case 3->{
+                    System.out.println("Exiting...");
+                    return;
+                }
+                default->{
+                    System.out.println("Incorrect option! Try again.");
+                }
+            }
+        }
+    }
+
+    public static void ex_as_9() {
+        WORD a = new WORD();
+        Scanner inout = new Scanner(System.in);
+        for (;;) {
+            System.out.println("Enter:\n1. Enter String\n2. To get number of times a occurs\n3. To get number of times and occurs\n4. To get if it starts with The\n5. To convert string to char\n6. To split string into tokens\n7. To exit");
+            int c = inout.nextInt();
+            switch (c) {
+                case 1->{
+                    Scanner io = new Scanner(System.in);
+                    System.out.println("Enter string");
+                    String s = io.nextLine();
+                    a.setAp(s);
+                }
+                case 2->{
+                    a.getA();
+                }
+                case 3->{
+                    a.getAnd();
+                }
+                case 4->{
+                    System.out.println("Check result is "+ a.checkThe());
+                }
+                case 5->{
+                    a.toCharArr();
+                }
+                case 6->{
+                    a.tokenGen();
+                }
+                case 7->{
+                    System.out.println("Exiting...");
+                    return;
+                }
+            }
+        }
+    }
+    public static void ex_as_10(){
+        WRAPPER a = new WRAPPER();
+        Scanner inout = new Scanner(System.in);
+        for(;;){
+            System.out.println("Enter:\n1. To convert basic to object\n2. To convert object to basic\n3. To convert basic to string\n4. To convert string to object\n5.To convert object to string\n6. To exit");
+            int c = inout.nextInt();
+            switch (c){
+                case 1->{
+                    a.basToObj();
+                }
+                case 2->{
+                    a.objToBas();
+                }
+                case 3->{
+                    a.basToStr();
+                }
+                case 4->{
+                    a.objToStr();
+                }
+                case 5->{
+                    a.strToObj();
+                }
+                case 6->{
+                    System.out.println("Exiting...");
+                    return;
+                }
+                default->{
+                    System.out.println("Incorrect option! Try again.");
+                }
+            }
+        }
+    }
+
+    public static void ex_as_11(){
+        ArrayList<CUST> arr = new ArrayList<CUST>();
+        Scanner inout = new Scanner(System.in);
+        for(;;){
+            System.out.println("Enter:\n1. To add a customer\n2. To initiate a loan\n3. To get credit limit\n4. To get current loan amount\n5. To exit");
+            int c = inout.nextInt();
+            switch (c){
+                case 1->{
+                    CUST temp = new CUST();
+                    arr.add(temp);
+                }
+                case 2->{
+                    System.out.println("Enter customer id:");
+                    int id = inout.nextInt();
+                    for(CUST i: arr){
+                        if(i.getId()==id){
+                            System.out.println("Enter loan amount");
+                            int la = inout.nextInt();
+                            i.startLoan(la);
+                            return;
+                        }
+                    }
+                    System.out.println("Id not found");
+                }
+                case 3->{
+                    System.out.println("Enter customer id:");
+                    int id = inout.nextInt();
+                    for(CUST i: arr){
+                        if(i.getId()==id){
+                            System.out.println("Credit limit of the customer is "+i.getCredLim());
+                            return;
+                        }
+                    }
+                    System.out.println("Id not found");
+                }
+                case 4->{
+                    System.out.println("Enter customer id:");
+                    int id = inout.nextInt();
+                    for(CUST i: arr){
+                        if(i.getId()==id){
+                            System.out.println("Current loan amount of the customer is "+i.getLoanAmt());
+                            return;
+                        }
+                    }
+                    System.out.println("Id not found");
+                }
+                case 5->{
+                    System.out.println("Exiting...");
+                    return;
+                }
+                default->{
+                    System.out.println("Incorrect option! Try again.");
+                }
+            }
+        }
+    }
+
+    public static void ex_as_12(){
+        ArrayList<STU> arr1 = new ArrayList<STU>();
+        ArrayList<FAC> arr2 = new ArrayList<FAC>();
+        Scanner inout = new Scanner(System.in);
+        for(;;){
+            System.out.println("Enter:\n1. To add a Student\n2. To add a Faculty\n3. To get student details\n4. To get faculty details\n5. To exit");
+            int c = inout.nextInt();
+            switch (c){
+                case 1->{
+                    STU t = new STU();
+                    t.init();
+                    arr1.add(t);
+                }
+                case 2->{
+                    FAC t = new FAC();
+                    t.init();
+                    arr2.add(t);
+                }
+                case 3->{
+                    System.out.println("Enter student roll:");
+                    int id = inout.nextInt();
+                    for(STU i: arr1){
+                        if(i.getRoll()==id){
+                            i.display();
+                            return;
+                        }
+                    }
+                    System.out.println("Id not found");
+                }
+                case 4->{
+                    System.out.println("Enter faculty id:");
+                    int id = inout.nextInt();
+                    for(FAC i: arr2){
+                        if(i.getFacultyId()==id){
+                            i.display();
+                            return;
+                        }
+                    }
+                    System.out.println("Id not found");
+                }
+                case 5->{
+                    System.out.println("Exiting...");
+                    return;
+                }
+                default->{
+                    System.out.println("Incorrect option! Try again.");
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
         Scanner io = new Scanner(System.in);
-        System.out.print("Enter :\n1. Assignment 1:\n2. Assignment 2:\n3. Assignment 3:\n4. Assignment 4:\n5. Assignment 5:\n6. Assignment 6:\n");
+        System.out.print("Enter :\nAssignment 1:\n1. Problem 1:\n2. Problem 2:\n3. Problem 3:\n4. Problem 4:\n5. Problem 5:\n6. Problem 6:\nAssignment 2:\n7. Problem 1:");
         int c = io.nextInt();
         switch (c) {
             case 1 -> {
-                System.out.println("Assignment 1:");
+                System.out.println("Problem 1:");
                 ex_as_1();
             }
             case 2 -> {
-                System.out.println("Assignment 2:");
+                System.out.println("Problem 2:");
                 ex_as_2();
             }
             case 3 -> {
-                System.out.println("Assignment 3:");
+                System.out.println("Problem 3:");
                 ex_as_3();
             }
             case 4 -> {
-                System.out.println("Assignment 4:");
+                System.out.println("Problem 4:");
                 ex_as_4();
             }
             case 5 -> {
-                System.out.println("Assignment 5:");
+                System.out.println("Problem 5:");
                 ex_as_5();
             }
             case 6 -> {
-                System.out.println("Assignment 6:");
+                System.out.println("Problem 6:");
                 ex_as_6();
+            }
+            case 7->{
+                System.out.println("Problem 1:");
+                ex_as_7();
+            }
+            case 8->{
+                System.out.println("Problem 2:");
+                ex_as_8();
+            }
+            case 9->{
+                System.out.println("Problem 3:");
+                ex_as_9();
+            }
+            case 10->{
+                System.out.println("Problem 4:");
+                ex_as_10();
+            }
+            case 11->{
+                System.out.println("Problem 5:");
+                ex_as_11();
+            }
+            case 12->{
+                System.out.println("Problem 6:");
+                ex_as_12();
             }
             default -> System.out.println("Wrong Input");
         }

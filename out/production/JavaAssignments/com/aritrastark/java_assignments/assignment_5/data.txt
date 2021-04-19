@@ -1,4 +1,4 @@
-asdfasf fghfgh fgh bvncvbxcvb
-rtyutyu ghkjjk qwerwr rteryt
-pyot bmnnm mnmn
-zxczxc vbcvbvb
+This is an indexing
+program and currently is indexing 
+an auto text 
+file
