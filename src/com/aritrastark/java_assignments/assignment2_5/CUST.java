@@ -77,17 +77,17 @@ public class CUST {
         Scanner io = new Scanner(System.in);
         System.out.println("Enter id, name, phone");
         this.id = io.nextInt();
-        this.name = io.nextLine();
+        this.name = io.next();
         this.phNo = io.nextInt();
-        System.out.println("Is the account privileged? Enter Y/N");
-
-        if(io.next().charAt(0)=='Y'||io.next().charAt(0)=='y'){
-            this.privilege = io.next().charAt(0);
-            this.credLim = 100000;
-        }
-        else if(io.next().charAt(0)=='N'||io.next().charAt(0)=='n'){
-            this.privilege = io.next().charAt(0);
+        System.out.println("Is the account privileged? Enter Yes/No");
+        String s = io.next();
+        if(s.toLowerCase().equals("yes")){
+            this.privilege = s.charAt(0);
             this.credLim = 150000;
+        }
+        else if(s.toLowerCase().equals("no")){
+            this.privilege = s.charAt(0);
+            this.credLim = 100000;
         }
         else{
             System.out.println("Wrong input");

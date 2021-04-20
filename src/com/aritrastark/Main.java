@@ -235,7 +235,7 @@ public class Main {
         Scanner inout = new Scanner(System.in);
         ArrayList<BANKACC> arr = new ArrayList<BANKACC>();
         for(;;){
-            System.out.println("Enter:\n1. To create account\n2. To update Interest Rate\n3. To get Interest Rate\n4. To get interest amount\n5.To get Balance\n6. To exit");
+            System.out.println("Enter:\n1. To create account\n2. To update Interest Rate\n3. To get Interest Rate\n4. To get interest amount\n5. To get Balance\n6. To exit");
             int c = inout.nextInt();
             switch(c){
                 case 1->{
@@ -244,50 +244,56 @@ public class Main {
                     arr.add(temp);
                 }
                 case 2->{
-                    System.out.println("Enter Account Number:");
-                    int a = inout.nextInt();
-                    for(BANKACC t:arr){
-                        if(t.getAccNo()==a){
-                            System.out.println("Enter new Interest Rate:");
-                            double ir = inout.nextDouble();
-                            t.setInterestRate(ir);
-                            return;
-                        }
+                    if(arr.isEmpty()){
+                        System.out.println("List empty, enter atleast one account");
                     }
-                    System.out.println("Id not found");
+                    else {
+                        System.out.println("Enter new Interest Rate:");
+                        double ir = inout.nextDouble();
+                        arr.get(0).setInterestRate(ir);
+                    }
                 }
                 case 3->{
+                    boolean check = false;
                     System.out.println("Enter Account Number:");
                     int a = inout.nextInt();
                     for(BANKACC t:arr){
                         if(t.getAccNo()==a){
                             System.out.println("Interest Rate: "+t.getInterestRate());
-                            return;
+                            check = true;
+                            break;
                         }
                     }
-                    System.out.println("Id not found");
+                    if(!check)
+                        System.out.println("Id not found");
                 }
                 case 4->{
+                    boolean check = false;
                     System.out.println("Enter Account Number:");
                     int a = inout.nextInt();
                     for(BANKACC t:arr){
                         if(t.getAccNo()==a){
                             System.out.println("Interest Amount: "+ t.calcInt());
-                            return;
+                            check = true;
+                            break;
                         }
                     }
-                    System.out.println("Id not found");
+                    if (!check)
+                        System.out.println("Id not found");
                 }
                 case 5->{
+                    boolean check = false;
                     System.out.println("Enter Account Number:");
                     int a = inout.nextInt();
                     for(BANKACC t:arr){
                         if(t.getAccNo()==a){
                             System.out.println("Balance Amount: "+ t.getBalance());
-                            return;
+                            check = true;
+                            break;
                         }
                     }
-                    System.out.println("Id not found");
+                    if (!check)
+                        System.out.println("Id not found");
                 }
                 case 6->{
                     System.out.println("Exiting...");
@@ -412,6 +418,7 @@ public class Main {
                     arr.add(temp);
                 }
                 case 2->{
+                    boolean check = false;
                     System.out.println("Enter customer id:");
                     int id = inout.nextInt();
                     for(CUST i: arr){
@@ -419,32 +426,40 @@ public class Main {
                             System.out.println("Enter loan amount");
                             int la = inout.nextInt();
                             i.startLoan(la);
-                            return;
+                            check = true;
+                            break;
                         }
                     }
-                    System.out.println("Id not found");
+                    if (!check)
+                        System.out.println("Id not found");
                 }
                 case 3->{
+                    boolean check = false;
                     System.out.println("Enter customer id:");
                     int id = inout.nextInt();
                     for(CUST i: arr){
                         if(i.getId()==id){
                             System.out.println("Credit limit of the customer is "+i.getCredLim());
-                            return;
+                            check = true;
+                            break;
                         }
                     }
-                    System.out.println("Id not found");
+                    if (!check)
+                        System.out.println("Id not found");
                 }
                 case 4->{
+                    boolean check = false;
                     System.out.println("Enter customer id:");
                     int id = inout.nextInt();
                     for(CUST i: arr){
                         if(i.getId()==id){
                             System.out.println("Current loan amount of the customer is "+i.getLoanAmt());
-                            return;
+                            check = true;
+                            break;
                         }
                     }
-                    System.out.println("Id not found");
+                    if (!check)
+                        System.out.println("Id not found");
                 }
                 case 5->{
                     System.out.println("Exiting...");
@@ -476,26 +491,32 @@ public class Main {
                     arr2.add(t);
                 }
                 case 3->{
+                    Boolean check = false;
                     System.out.println("Enter student roll:");
                     int id = inout.nextInt();
                     for(STU i: arr1){
                         if(i.getRoll()==id){
                             i.display();
-                            return;
+                            check = true;
+                            break;
                         }
                     }
-                    System.out.println("Id not found");
+                    if (!check)
+                        System.out.println("Id not found");
                 }
                 case 4->{
+                    Boolean check = false;
                     System.out.println("Enter faculty id:");
                     int id = inout.nextInt();
                     for(FAC i: arr2){
                         if(i.getFacultyId()==id){
                             i.display();
-                            return;
+                            check = true;
+                            break;
                         }
                     }
-                    System.out.println("Id not found");
+                    if (!check)
+                        System.out.println("Id not found");
                 }
                 case 5->{
                     System.out.println("Exiting...");
@@ -510,7 +531,7 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
         Scanner io = new Scanner(System.in);
-        System.out.print("Enter :\nAssignment 1:\n1. Problem 1:\n2. Problem 2:\n3. Problem 3:\n4. Problem 4:\n5. Problem 5:\n6. Problem 6:\nAssignment 2:\n7. Problem 1:");
+        System.out.print("Enter :\nAssignment 1:\n1. Problem 1:\n2. Problem 2:\n3. Problem 3:\n4. Problem 4:\n5. Problem 5:\n6. Problem 6:\nAssignment 2:\n7. Problem 1:\n8. Problem 2:\n9. Problem 3:\n10. Problem 4:\n11. Problem 5:\n12. Problem 6:");
         int c = io.nextInt();
         switch (c) {
             case 1 -> {

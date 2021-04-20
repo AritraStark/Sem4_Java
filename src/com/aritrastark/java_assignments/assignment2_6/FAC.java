@@ -38,7 +38,7 @@ public class FAC extends PERSON{
         System.out.println("Enter faculty ID, specialization, department");
         this.facultyId = io.nextInt();
         this.department = io.nextLine();
-        this.specialization =  io.nextLine();
+        this.specialization =  io.next();
     }
 
     @Override

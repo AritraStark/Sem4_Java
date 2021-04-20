@@ -5,7 +5,7 @@ public class METRIC {
     private double mi;
 
     public void convertToKm(){
-        this.km = this.mi/1.5;
+        this.km = this.mi*1.5;
     }
 
     public double getKm() {
@@ -25,6 +25,6 @@ public class METRIC {
     }
 
     public void convertToMile(){
-        this.mi = this.km*1.5;
+        this.mi = this.km/1.5;
     }
 }

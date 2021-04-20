@@ -28,7 +28,7 @@ public class STU extends PERSON{
         Scanner io = new Scanner(System.in);
         System.out.println("Enter Roll, course");
         this.roll = io.nextInt();
-        this.course = io.nextLine();
+        this.course = io.next();
     }
 
     @Override

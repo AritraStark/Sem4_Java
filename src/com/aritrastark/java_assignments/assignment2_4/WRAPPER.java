@@ -66,7 +66,7 @@ public class WRAPPER {
         Scanner io = new Scanner(System.in);
         System.out.println("Enter string containing integer value");
         this.b = io.next();
-        this.a = Integer.getInteger(this.b);
+        this.a = Integer.parseInt(this.b);
         System.out.println("Result: "+ this.getA());
     }
 }
